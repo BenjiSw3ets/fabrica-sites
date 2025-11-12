@@ -1,0 +1,19 @@
+.formulario-campo{
+    display: flex;
+    flex: 1;
+    gap: 16px;
+    width: 70%;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    align-items: center;
+}
+.formulario-campo label{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
+}
+.formulario-campo input,
+.formulario-campo select,
+.formulario-campo textarea {
+    width: 300px;
+    justify-self: flex-end;
+}
