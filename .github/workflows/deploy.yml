@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  worktflow_dispatch:
+  workflow_dispatch:
 
 permissions:
   constents: read
