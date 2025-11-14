@@ -12,33 +12,33 @@ permissions:
   id-token: write
 
 concurrency:
-  group: ${{ github.workflown }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   deploy:
-    name:  deploy to Github pages
+    name: 🚀 Deploy to Github pages
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads'
+    if: github.ref == 'refs/heads/main'
     outputs:
-      page_url: ${{ steps.deployment.outputs.page.page_url }}
+      page_url: ${{ steps.deployment.outputs.page_url }}
 
     environment:
-      name: github_pages
-      url: ${{ steps.deployment.outputs.page.page_url }}
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: 📤 Checkout code
-        uses: actions/Checkout@v4
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
 
       - name: 📄 Setup Pages
         uses: actions/configure-pages@v4
 
       - name: 📦 Upload artifact
-        uses: actions/Upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "."
 
-      - name: 🚀 Deploy to Github pages
+      - name: 🚀 Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@
+        uses: actions/deploy-pages@v4
