@@ -19,7 +19,7 @@ jobs:
   deploy:
     name:  deploy to Github pages
     runs-on: ubuntu-latest
-    iF: github.ref == 'refs/heads'
+    if: github.ref == 'refs/heads'
     outputs:
       page_url: ${{ steps.deployment.outputs.page.page_url }}
 
